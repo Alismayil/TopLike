@@ -1,0 +1,119 @@
+@mixin MyFlex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// @include MyFlex;
+#shopDownSection {
+    background-color: red;
+
+    .filterUpBox {
+        background-color: green;
+        display: flex;
+        justify-content: space-between;
+        padding: 30px 30px;
+
+        .filterLefBox {
+            @include MyFlex;
+            width: 140px;
+            border: 1px solid black;
+            background-color: white;
+            padding: 6px;
+            gap: 10px;
+            font-size: 15px;
+            cursor: pointer;
+            transition: 0.1s;
+        }
+
+        .filterLefBox:hover {
+            background-color: #ffab00;
+            color: white;
+            border: none;
+            transition: 0.1s;
+
+        }
+
+        .filterRightBox {
+            @include MyFlex;
+            gap: 10px;
+            cursor: pointer;
+            .filterMenusNumberBox {
+                display: none;
+                gap: 10px;
+                
+                .filterMenuNumber {
+                    padding: 13px 19px;
+                    background-color: white;
+                    font-size: 20px;
+                    border: 1px solid black;
+                    cursor: pointer;
+                }
+
+                .filterMenuNumber:hover {
+                    background-color: black;
+                    color: white;
+                }
+                
+                
+
+            }
+            .isOpenMenu{
+                display: flex;
+            }
+            .filterMenuBox {
+                background-color: white;
+                @include MyFlex;
+                border: 1px solid black;
+                gap: 3px;
+                font-size: 30px;
+                padding: 9px;
+                
+            }
+
+            .filterSelectBox {
+                border: 1px solid black;
+
+                .filterSelect {
+                    background-color: white;
+                    @include MyFlex;
+                    cursor: pointer;
+                    gap: 10px;
+                    padding: 14px 45px;
+                    font-size: 17px;
+                    position: relative;
+
+                    .openFilterBox {
+                        background-color: white;
+                        position: absolute;
+                        top: 55px;
+                        display: none;
+                        font-size: 10px;
+                        flex-direction: column;
+                        font-size: 15px;
+                        border: 1px solid black;
+
+                        p {
+                            padding: 10px 43.5px 10px 10px;
+                        }
+
+                        p:hover {
+                            background-color: #ffab00;
+                            color: white;
+                        }
+
+                    }
+
+                    .openFilter {
+                        display: flex;
+                    }
+                 
+
+                }
+
+
+            }
+        }
+    }
+
+}

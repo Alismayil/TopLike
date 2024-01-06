@@ -1,0 +1,170 @@
+@mixin MyFlex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// @include MyFlex;
+
+#newProductSection {
+    .newProductUpText{
+        @include MyFlex;
+        padding: 20px 0px 40px;
+        h1{
+            font-size: 50px
+        }
+    }
+    .newsProductCardsBox {
+        @include MyFlex;
+        flex-wrap: wrap;
+        padding: 20px;
+        gap: 20px;
+
+        .shopProductCard {
+            .shopProductImgBox {
+                overflow: hidden;
+                @include MyFlex;
+                position: relative;
+                img {
+                    max-width: 350px;
+                    transition: 0.5s;
+                }
+
+                img:hover {
+                    transition: 0.5s;
+                    transform: scale(1.1);
+                }
+                .saleBox{
+                    background-color: #ed1f1f;
+                    padding: 7px 20px;
+                    color: white;
+                    position: absolute;
+                    z-index: 4;
+                    top: 0px;
+                    right: 30px;
+                }
+                .wishlistBox{
+                    background-color: white;
+                    box-shadow: -6px 3px 20px -6px rgba(0, 0, 0, 0.874);
+                    padding:  15px;
+                    border-radius: 50%;
+                    position: absolute;
+                    top: 70px;
+                    right: 0;
+                    z-index: 4;
+                    transform: translate(70px);
+                    transition: 0.5s;
+                    font-size: 20px;
+                @include MyFlex;
+                    cursor: pointer;
+                }
+                .wishlistBox:hover{
+                    background-color: #ffab00;
+                    color: white;
+                    
+                }
+                .basketBox{
+                    background-color: white;
+                    box-shadow: -6px 3px 20px -6px rgba(0, 0, 0, 0.874);
+                    padding: 15px;
+                    border-radius: 50%;
+                    position: absolute;
+                    top: 135px;
+                    right: 0;
+                    z-index: 4;
+                    transform: translate(70px);
+                    transition: 0.5s;
+                    font-size: 20px;
+                    @include MyFlex;
+                    cursor: pointer;
+                }
+                .basketBox:hover{
+                    background-color: #ffab00;
+                    color: white;
+                }
+                .detailBox{
+                    background-color: white;
+                    box-shadow: -5px 3px 20px -6px rgba(0, 0, 0, 0.874);
+                    padding: 15px;
+                    border-radius: 50%;
+                    position: absolute;
+                    top: 200px;
+                    right: 0;
+                    z-index: 4;
+                    transform: translate(70px);
+                    transition: 0.5s;
+                    font-size: 20px;
+                    @include MyFlex;
+                    cursor: pointer;
+                }  
+                .detailBox:hover{
+                    background-color: #ffab00;
+                    color: white;
+                }
+                
+                
+            }
+            .shopProductImgBox:hover{
+                .wishlistBox{
+                    transform: translate(-35px);
+                    transition: 0.9s;
+
+                }
+                .basketBox{
+                    transform: translate(-35px);
+                    transition: 1.2s;
+
+                }
+                .detailBox{
+                    transform: translate(-35px);
+                    transition: 1.5s;
+
+                }
+                
+            }
+
+            .shopProductTextBox {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+
+                h3 {
+                    transition: 0.1s;
+                }
+
+                h3:hover {
+                    color: #ffab00;
+                    transition: 0.1s;
+                }
+
+                p {
+                    color: #ffab00;
+                    font-size: 20px;
+                    font-weight: 600;
+                    display: flex;
+                    gap: 10px;
+
+                    span {
+                        color: gray;
+                        text-decoration-line: line-through;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+@media only screen and (max-width: 388px) {
+    #newProductSection {
+        .newsProductCardsBox {
+            .shopProductCard {
+                .shopProductImgBox {
+                    img {
+                        max-width: 310px;
+                    }
+                }
+            }
+        }
+    }
+}

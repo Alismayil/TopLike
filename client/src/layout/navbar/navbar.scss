@@ -1,0 +1,565 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@mixin MyFlex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav {
+    z-index: 5;
+    @include MyFlex;
+    padding: 40px 0px;
+    position: fixed;
+    width: 100%;
+
+    .navbarHiddenMenuBtnBox {
+        display: none;
+    }
+
+    .navbarIconBox {
+        width: 120px;
+        @include MyFlex;
+
+        .navbarIm1 {
+            display: block;
+        }
+
+        .navbarImg2 {
+            display: none;
+        }
+
+        img {
+            max-width: 120px;
+        }
+    }
+
+    .navbarPageNamesBox {
+        width: 70%;
+        @include MyFlex;
+        display: block;
+        display: grid;
+        grid-template-columns: auto auto auto auto auto;
+        gap: 40px;
+        font-size: 25px;
+
+        .pageNameAxiosBox {
+            color: white;
+            
+            p {
+                font-weight: 1000;
+                position: relative;
+                cursor: pointer;
+                transition: 0.4s;
+
+            }
+
+            p:hover {
+                color: #ffab00;
+                transition: 0.4s;
+            }
+
+            span {
+                font-size: 15px;
+            }
+
+            .hot {
+                position: absolute;
+                top: -25px;
+                right: -10px;
+                font-size: 30px;
+            }
+
+            h6 {
+                color: white;
+                position: absolute;
+                top: 2px;
+                left: 4px;
+                font-weight: 0;
+                font-size: 14px;
+            }
+        }
+    }
+
+    .navbarFuncBox {
+        width: 200px;
+        @include MyFlex;
+        gap: 17px;
+        .basketBtnBox{
+            position: relative;
+            .basketBall{
+                width: 13px;
+                height: 13px;
+                border-radius: 50%;
+                background-color: #ffab00;
+                position: absolute;
+                bottom: -1px;
+                right: -1px;
+            }
+        }
+        button {
+            font-size: 26px;
+            @include MyFlex;
+            background-color: transparent;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    }
+
+
+}
+
+.openLoginBox {
+    // background-color: rgb(255, 0, 0);
+    background-color: rgba(0, 0, 0, 0.518);
+    width: 100%;
+    top: 0;
+    @include MyFlex;
+    padding: 65px;
+    display: none;
+    height: 100vh;
+    z-index: 5;
+    .loginBox {
+        position: absolute;
+        background-color: white;
+        @include MyFlex;
+        flex-direction: column;
+        padding: 50px 70px 100px;
+        gap: 20px;
+        display: none;
+        text-align: center;
+        .closeBtn{
+            background-color: transparent;
+            border: none;
+            color: white;
+            font-size: 35px;
+            transition: 0.3s;
+            cursor: pointer;
+            position: absolute;
+        top: -33px;
+        right: 0;
+
+        }
+        .closeBtn:hover{
+            color: #ffab00;
+            transition: 0.3s;
+        }
+        img {
+            max-width: 100px;
+            padding: 20px 0px;
+        }
+
+        .loginLine {
+            background-color: rgba(128, 128, 128, 0.253);
+            height: 1px;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        span {
+            font-size: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            gap: 20px;
+            text-align: start;
+            padding: 20px 0px;
+            input {
+                
+                padding: 10px;
+                width: 360px;
+                padding: 20px;
+                border: 1px solid rgba(128, 128, 128, 0.253);
+                outline: none;
+            }
+
+            p {
+                color: rgba(128, 128, 128, 0.459);
+                cursor: pointer;
+                transition: 0.1s;
+                padding: 0px 0px 20px;
+            }
+
+            p:hover {
+                color: #ffab00;
+                transition: 0.1s;
+
+            }
+        }
+
+        button {
+            width: 100%;
+            padding: 20px;
+            background-color: black;
+            color: white;
+            border: none;
+            transition: 0.3s;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        button:hover {
+            background-color: #ffab00;
+            transition: 0.3s;
+
+        }
+
+        .changeRegisterBox {
+            margin-top: 20px;
+            width: 100%;
+            background-color: rgba(128, 128, 128, 0.084);
+            height: 40px;
+            @include MyFlex;
+
+            p {
+                display: flex;
+                gap: 10px;
+                font-size: 16px;
+
+                span {
+                    font-size: 16px;
+
+                    color: rgba(128, 128, 128, 0.459);
+                    cursor: pointer;
+                    transition: 0.1s;
+                }
+
+                span:hover {
+                    color: #ffab00;
+                    transition: 0.1s;
+
+                }
+            }
+        }
+    }
+    .registerBox{
+        position: absolute;
+        background-color: white;
+        @include MyFlex;
+        flex-direction: column;
+        padding: 60px 70px 210px;
+        gap: 20px;
+        display: none;
+        text-align: center;
+        z-index: 9999;
+        .closeBtn{
+            background-color: transparent;
+            border: none;
+            color: white;
+            font-size: 35px;
+            transition: 0.3s;
+            cursor: pointer;
+            position: absolute;
+        top: -44.7px;
+        right: 0;
+
+        }
+        .closeBtn:hover{
+            color: #ffab00;
+            transition: 0.3s;
+        }
+        span{
+            font-size: 20px;
+        }
+        form {
+            margin: 20px 0px;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            gap: 20px;
+
+            input {
+                padding: 10px;
+                width: 360px;
+                padding: 20px;
+                border: 1px solid rgba(128, 128, 128, 0.253);
+                outline: none;
+            }
+        }
+        button {
+            width: 100%;
+            padding: 20px;
+            background-color: black;
+            color: white;
+            border: none;
+            transition: 0.3s;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        button:hover {
+            background-color: #ffab00;
+            transition: 0.3s;
+
+        }
+        .changeRegisterBox {
+            margin-top: 20px;
+            width: 100%;
+            background-color: rgba(128, 128, 128, 0.084);
+            height: 40px;
+            @include MyFlex;
+
+            
+                p {
+                    font-size: 16px;
+
+                    cursor: pointer;
+                    transition: 0.1s;
+                }
+                p:hover {
+                    color: #ffab00;
+                    transition: 0.1s;
+
+                }
+        }
+    }
+}
+
+.searchBox{
+background-color: rgba(0, 0, 0, 0.518);
+width: 100%;
+height: 100vh;
+position: fixed;
+top: 0;
+z-index: 5;
+display: none;
+.closeBtn{
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+    transition: 0.3s;
+    position: absolute;
+    top: 40px;
+    right: 40px;
+
+}
+.closeBtn:hover{
+    color: #ffab00;
+    transition: 0.3s
+}
+form{
+@include MyFlex;
+    input{
+        padding: 20px 150px 20px 20px;
+        outline: none;
+    }
+    input::placeholder{
+        
+        font-size: 17px;
+    }
+}
+}
+
+.basketOpenBox{
+    background-color: rgba(0, 0, 0, 0.518);
+    width: 100%;
+    height: 100vh;
+top: 0;
+z-index: 5;
+display: none;
+justify-content: end;
+
+.basketBox{
+    width: 30%;
+    background-color: white;
+
+    .basketUpBox{
+        display: flex;
+
+    button{
+        font-size: 30px;
+        color: black;
+        border: 1px solid gray;
+        background-color: transparent;
+        padding: 10px;
+    @include MyFlex;
+
+    }
+    p{
+        font-size: 20px;
+        color: black;
+        border: 1px solid gray;
+        background-color: transparent;
+    @include MyFlex;
+        // padding: 0px 117.3px;
+    }
+    span{
+        font-size: 20px;
+        color: black;
+        border: 1px solid gray;
+        background-color: transparent;
+    @include MyFlex;
+    padding:0px 20px;
+
+    }
+    }
+    .basketDownBox{
+        background-color: red;
+        width: 100%;
+        height: 90%;
+        .basketCard{
+            background-color: teal;
+            display: flex;
+            border: 1px solid black;
+        }
+    }
+    
+}
+}
+
+
+.open{
+display: flex;
+position: fixed;
+}
+.openSearch{
+    @include MyFlex;
+
+}
+.registerOpen{
+    display: block !important;
+    z-index: 6;
+
+}
+.loginOpen{
+    display: block !important;
+    z-index: 6;
+}
+
+.openBasket{
+    display: flex;
+    position: fixed;
+}
+
+.scrolled {
+    transition: 0.5s;
+    background-color: rgba(0, 0, 0, 0.626);
+    animation: fadeDown 0.5s ease-in-out;
+  }
+
+  @keyframes fadeDown {
+    from {
+      transform: translateY(-100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+@media only screen and (max-width: 1200px) {
+    nav {
+        justify-content: space-between;
+        padding: 20px 10px;
+
+        .navbarHiddenMenuBtnBox {
+            display: block;
+
+            button {
+                @include MyFlex;
+                background-color: transparent;
+                border: none;
+                font-size: 25px;
+            }
+        }
+
+        .navbarIconBox {
+            .navbarImg1 {
+                display: none;
+            }
+
+            .navbarImg2 {
+                display: block;
+
+            }
+
+            img {
+                max-width: 150px;
+            }
+        }
+
+        .navbarPageNamesBox {
+            display: none;
+        }
+
+        .navbarFuncBox {
+            width: 100px;
+
+            .wishlistBtnBox {
+                display: none;
+            }
+            
+            button {
+                color: black;
+            }
+        }
+    }
+}
+@media only screen and (max-width: 456px) {
+    .searchBox{
+        form{
+            input{
+                padding: 15px 30px 15px 20px;
+                outline: none;
+            }
+            input::placeholder{
+                
+                font-size: 17px;
+            }
+        }
+        }
+
+
+}
+@media only screen and (max-width: 556px) {
+    .openLoginBox {
+        .loginBox {
+            padding: 10px 20px 70px;
+            .closeBtn{
+            top: -40px;
+            }
+            form {
+            @include MyFlex;
+                padding: 5px 0px;
+                input {
+                    width: 220px;
+                    padding: 13px;
+                }
+                input::placeholder{
+                    font-size: 10px;
+                }
+            }
+            button {
+                width: 220px;
+                padding: 13px;
+            }
+        }
+        .registerBox{
+            padding: 40px 33px 155px;
+            .closeBtn{
+            top: -40px;
+            }
+            form {
+                input {
+                    width: 220px;
+                    padding: 13px;
+                }
+                input::placeholder{
+                    font-size: 10px;
+                }
+            }
+            button {
+                width: 220px;
+                padding: 13px;
+            }
+        }
+    }
+
+
+}

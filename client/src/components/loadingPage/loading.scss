@@ -1,0 +1,12 @@
+@mixin MyFlex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#loading{
+    @include MyFlex;
+    width: 100%;
+    height: 85vh;
+}
